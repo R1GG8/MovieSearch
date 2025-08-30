@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #8E0E00;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #1F1C18, #8E0E00);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #1F1C18, #8E0E00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.container {
+    width: 400px; /* меньше, чем сейчас */
+    height: 150px; /* только для строки поиска */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F8F8FF;
+    padding: 20px;
+    border-radius: 10px;
+    transition: all 0.8s ease; /* плавность для всего контейнера */
+    box-shadow: 0 0 20px 5px black;
+    overflow: hidden; /* чтобы внутри ничего не вылазило */
+}
+
+.container.big {
+    width: 550px;   /* увеличиваем */
+    min-height: 550px; /* хватает для постера и текста */
+}
+
+
+.container:hover {
+    box-shadow: 0 0 20px 10px black;
+}
+
+.searchElements {
+    align-self: flex-end;
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.searchInput {
+    border-radius: 10px;
+    border: 1px solid black;
+    outline: none;
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+.searchInput:hover {
+    box-shadow: 0 0 20px 1px #8E0E00;
+}
+
+.searchBtn {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 8px 15px;
+    border-radius: 15px;
+    background-color: orange;
+    border: 0px solid black;
+    cursor: pointer;
+}
+
+.searchBtn:hover {
+    background-color: rgb(219, 143, 2);
+}
+
+.resultInfo {
+    visibility: hidden; /* скрываем, но оставляем в потоке */
+    transform: translateY(10px);
+    transition: transform 0.2s ease, visibility 0s 0.2s; 
+    flex-direction: column;
+    gap: 20px;
+}
+
+.resultInfo.show {
+    visibility: visible;
+    transform: translateY(0);
+    transition-delay: 0s; /* убираем задержку у появления */
+}
+
+
+
+.resultInfo p {
+    font-size: 19px;
+}
+
+.movieWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 15px;
+}
+
+.moviePoster {
+    border-radius: 10px;
+    width: 250px;
+    height: 380px;
+}
+
+.main-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-self: self-start;
+    word-wrap: break-word;
+    width: 200px;
+}

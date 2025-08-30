@@ -11,7 +11,7 @@ let year = document.querySelector(".year")
 
 async function getFilm(inputMovieTitle) {
     try {
-        const response = await fetch(`http://www.omdbapi.com/?apikey=f9e1714f&t=${inputMovieTitle}`)
+        const response = await fetch(`https://www.omdbapi.com/?apikey=f9e1714f&t=${inputMovieTitle}`)
         if (!response.ok) throw new Error("Ошибка при загрузке")
 
         const result = await response.json()
@@ -63,5 +63,6 @@ input.addEventListener("keydown", (event) => {
         }
     }
 })
+
 
 

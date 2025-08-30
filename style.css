@@ -10,29 +10,37 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #8E0E00;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #1F1C18, #8E0E00);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #1F1C18, #8E0E00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #8E0E00;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #1F1C18, #8E0E00);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #1F1C18, #8E0E00);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
 .container {
-    width: 400px; /* меньше, чем сейчас */
-    height: 150px; /* только для строки поиска */
+    width: 400px;
+    height: 150px;
+    /* только для строки поиска */
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #F8F8FF;
     padding: 20px;
     border-radius: 10px;
-    transition: all 0.8s ease; /* плавность для всего контейнера */
+    transition: all 0.8s ease;
+    /* плавность для всего контейнера */
     box-shadow: 0 0 20px 5px black;
-    overflow: hidden; /* чтобы внутри ничего не вылазило */
+    overflow: hidden;
+    /* чтобы внутри ничего не вылазило */
 }
 
 .container.big {
-    width: 550px;   /* увеличиваем */
-    min-height: 550px; /* хватает для постера и текста */
+    width: 550px;
+    /* увеличиваем */
+    min-height: 550px;
+    /* хватает для постера и текста */
 }
 
 
@@ -74,9 +82,10 @@ body {
 }
 
 .resultInfo {
-    visibility: hidden; /* скрываем, но оставляем в потоке */
+    visibility: hidden;
+    /* скрываем, но оставляем в потоке */
     transform: translateY(10px);
-    transition: transform 0.2s ease, visibility 0s 0.2s; 
+    transition: transform 0.2s ease, visibility 0s 0.2s;
     flex-direction: column;
     gap: 20px;
 }
@@ -84,7 +93,8 @@ body {
 .resultInfo.show {
     visibility: visible;
     transform: translateY(0);
-    transition-delay: 0s; /* убираем задержку у появления */
+    transition-delay: 0s;
+    /* убираем задержку у появления */
 }
 
 
@@ -114,4 +124,70 @@ body {
     align-self: self-start;
     word-wrap: break-word;
     width: 200px;
+}
+
+@media (max-width: 600px) {
+    .searchElements {
+        gap: 5px;
+    }
+
+    .searchInput {
+        width: 200px;
+    }
+
+    .container {
+        width: 300px;
+    }
+
+    .container.big {
+        width: 470px;
+    }
+
+    .resultInfo.show {
+        width: 420px;
+    }
+
+    .main-info {
+        width: 190px;
+    }
+
+    .moviePoster {
+        width: 220px;
+        height: 330px;
+    }
+}
+
+
+@media (max-width: 505px) {
+
+
+    .searchElements {
+        gap: 5px;
+    }
+
+    .searchInput {
+        width: 200px;
+    }
+
+    .container {
+        width: 300px;
+    }
+
+    .container.big {
+        width: 350px;
+    }
+
+    .resultInfo.show {
+        padding: 30px;
+        width: 380px;
+    }
+
+    .main-info {
+        width: 100px;
+    }
+
+    .moviePoster {
+        width: 200px;
+        height: 300px;
+    }
 }
